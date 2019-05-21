@@ -3,7 +3,7 @@ import './ControlBar.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRedoAlt, faTrashAlt, faCloudDownloadAlt } from '@fortawesome/free-solid-svg-icons';
 
-export default class ControlBar extends Component {
+class ControlBar extends Component {
   render() {
     return (
       <div className="ControlBar">
@@ -15,3 +15,4 @@ export default class ControlBar extends Component {
   }
 }
 
+export default ControlBar;

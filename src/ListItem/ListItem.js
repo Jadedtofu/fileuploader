@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './ListItem.css';
-import ControlBar from './ControlBar/ControlBar';
+import ControlBar from '../ControlBar/ControlBar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faFileImage,
@@ -11,7 +11,7 @@ import {
 
 // this.props are of the object keys contained in the ListItem component on FilterableList
 
-export default class ListItem extends Component {
+class ListItem extends Component {
   render() {
 
     const icons = {
@@ -44,3 +44,5 @@ export default class ListItem extends Component {
     );
   }
 }
+
+export default ListItem;

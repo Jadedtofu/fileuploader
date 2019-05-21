@@ -3,7 +3,7 @@ import './App.css';
 import SearchBar from './SearchBar/SearchBar';
 import FilterableList from './FilterableList/FilterableList';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,17 +12,45 @@ export default class App extends Component {
     };
   }
 
+  /*  other options for filtering
+  this.state = {
+    searchTerm: '',
+    filterOption: 'Uploaded'
+  };
+
+  this.state = {
+    searchTerm: 'cats',
+    filterOption: 'Uploaded'
+  };
+  */
+
+  updateSearchTerm(term) {
+    this.setState({
+      searchTerm: term
+    });
+  }
+
+  updateFilterOption(option) {
+    this.setState({
+      filterOption: option
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <SearchBar
           searchTerm={this.state.searchTerm}
-          filterOption={this.state.filterOptions} />
+          filterOption={this.state.filterOption}
+          handleUpdate ={ term => this.updateSearchTerm(term) }
+          handleFilterChange={ option => this.updateFilterOption(option) } />
         <FilterableList 
           files={this.props.files}
           searchTerm={this.state.searchTerm}
-          filterOption={this.state.filterOptions} />
+          filterOption={this.state.filterOption} />
       </div>
     );
   }
 }
+
+export default App;
